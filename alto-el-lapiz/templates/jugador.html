@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Turno de {{ jugador }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Turno de {{ jugador }}</h2>
+  <h3>Letra: <span class="letra">{{ letra }}</span></h3>
+  <form method="POST">
+    {% for cat in categorias %}
+      <div class="campo">
+        <label>{{ cat }}:</label>
+        <input type="text" name="{{ cat.lower() }}" placeholder="Escribe una palabra...">
+      </div>
+    {% endfor %}
+    <button type="submit">Siguiente</button>
+  </form>
+</body>
+</html>

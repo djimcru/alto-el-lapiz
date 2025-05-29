@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Alto el Lápiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Alto el Lápiz</h1>
+        <h2>Letra actual: <span class="letra">{{ letra }}</span></h2>
+        <form method="post">
+            {% for categoria in categorias %}
+                <label for="{{ categoria|lower }}">{{ categoria }}:</label>
+                <input type="text" name="{{ categoria|lower }}" required><br>
+            {% endfor %}
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

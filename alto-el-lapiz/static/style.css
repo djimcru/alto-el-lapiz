@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+}
+
+.container {
+    background: white;
+    border-radius: 12px;
+    padding: 2em;
+    margin: auto;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+    padding: 0.5em;
+    margin: 0.3em 0 1em;
+    width: 80%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+button, .boton {
+    background: #4CAF50;
+    color: white;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.letra {
+    color: #e91e63;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.errores {
+    background-color: #ffe6e6;
+    color: #a94442;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.correcto {
+    background-color: #e6ffec;
+    color: #256029;
+    border: 1px solid #b2d8c8;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.respuestas {
+    text-align: left;
+    margin-top: 1em;
+}
+.puntaje {
+    background-color: #fffde7;
+    color: #5d4037;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}

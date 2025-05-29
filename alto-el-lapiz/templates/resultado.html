@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Resultados</h1>
+        <h2>Letra: <span class="letra">{{ letra }}</span></h2>
+
+        <div class="puntaje">
+            🧮 Puntaje total: <strong>{{ puntaje }}</strong> puntos
+        </div>
+
+        {% if errores %}
+            <div class="errores">
+                <h3>Errores:</h3>
+                <ul>
+                    {% for error in errores %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="correcto">
+                ✅ ¡Todas las respuestas empiezan con la letra correcta!
+            </div>
+        {% endif %}
+
+        <div class="respuestas">
+            {% for campo, valor in respuestas.items() %}
+                <p><strong>{{ campo.capitalize() }}:</strong> {{ valor }}</p>
+            {% endfor %}
+        </div>
+
+        <a class="boton" href="{{ url_for('index') }}">Volver a jugar</a>
+    </div>
+</body>
+</html>

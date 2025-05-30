@@ -1,1 +1,0 @@
-# alto-el-lapiz

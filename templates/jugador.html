@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Alto el Lápiz - Juego</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>📝 Hola {{ nombre }}</h1>
+    <h2>Letra actual: <span class="letra">{{ letra }}</span></h2>
+    <form method="post" action="/enviar">
+        {% for categoria in categorias %}
+            <label>{{ categoria }}:</label>
+            <input type="text" name="{{ categoria|lower }}" required><br>
+        {% endfor %}
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="alerta"></div>
+</div>
+<script>
+    const socket = io();
+    socket.on('jugador_termino', data => {
+        document.getElementById('alerta').innerHTML = `🚨 ${data.jugador} ha terminado.`;
+    });
+    socket.on('todos_terminaron', () => {
+        alert('✋ ¡Alto el lápiz! Todos los jugadores terminaron. Mostrando resultados...');
+        window.location.href = "/resultado";
+    });
+</script>
+</body>
+</html>
+
